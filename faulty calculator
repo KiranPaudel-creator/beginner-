@@ -1,0 +1,58 @@
+#making a calculator that adds ,subtracts ,multiplies, divides and calculate power among
+#two numbers except some operations
+# i.e it shows 56/6=4 , 55+7=77 ,55*5=255, 90-17=42
+
+def add(x,y):
+    return x + y
+def subtract(x,y):
+    return x - y
+def multiply(x,y):
+    return x * y
+def divide(x,y):
+    return x / y
+def power(x,y):
+    return pow(x,y)
+e = True
+while e == True :
+    print("select the operation that you want to do with two numbers:")
+    print("1.ADD")
+    print("2.SUBTRACT")
+    print("3.MULTIPLY")
+    print("4.DIVIDE")
+    print("5.POWER")
+    c = int(input("Choose one(1/2/3/4/5) : "))
+    a = float(input("Enter the first number : "))
+    b = float(input("Enter the second number : "))
+
+    if c == 1:
+        if a == 55 and b == 7 or a == 7 and b == 55:
+            print(a,"+",b,"=",77)
+        else:
+            print(a,"+",b,"= ",add(a,b))
+    elif c==2:
+        if a==90 and b==17 :
+            print(a,"-",b,"=",42)
+        else:
+            print(a,"-",b,"= ",subtract(a,b))
+    elif c==3:
+        if a==55 and b==5 or a==5 and b==55:
+            print(a,"x",b,"=",255)
+        else:
+            print(a,"x",b,"= ",multiply(a,b))
+    elif c==4:
+        if a==56 and b==6 :
+            print(a,"/",b,"=",4)
+        else:
+            print(a,"/",b,"= ",divide(a,b))
+    elif c==5:
+        print(a,"^",b ,"= ",power(a,b))
+    else:
+        print('Invalid input!Please try again.')
+
+    print("                >>>>>>>>>>>>>>>>    <<<<<<<<<<<<<<<<               ")
+    print(">>>>>>>>>>>>>>>>>>>>>RESTRAT<<<<<<<<<<<<<<<<<<<<<<<<")
+    d =str.lower (input("Do you want to repeat the program? type y for yes and n for no :"))
+    if d == "y":
+        continue
+    else:
+        exit()
