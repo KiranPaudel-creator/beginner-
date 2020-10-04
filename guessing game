@@ -1,0 +1,24 @@
+#guess the number(game)
+
+a = 26
+i = 0
+z=5
+print("You have 5 chances to guess the number..")
+while(i<5):
+    guess=int(input('Enter the number of guess :\a '))
+    if guess>a:
+        z = z - 1
+        print("Please.Try smaller number.    guess left: \a",z)
+        i=i+1
+        continue
+    elif guess<a:
+        z = z - 1
+        print ("Please.Try bigger number.     guess left:\a",z)
+        i=i+1
+        continue
+    else:
+        print("Congratulation! You have guessed the correct number..       guessed in:",z)
+        break
+if i==5:
+    print("          >>>>>>.GAME OVER.<<<<<<        ")
+    print("The hidden number is ",a)
