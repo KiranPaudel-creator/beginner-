@@ -1,0 +1,53 @@
+"""pattern printing"""
+print ("    This program is related to star pattern printing. # Made by ::Mr.Kiran Paudel..")
+while(True):
+    a = int(input("Enter in how many rows you want to print pattern : \n"))
+    print ("True displays  *,** such pattern. ")
+    print ("False displays **,* such pattern. ")
+    b = str.capitalize(input("Enter t for True and f for False : \n"))
+    d=0
+    e = "*"
+    if (b=='T'):
+        print("Your star pattern is here.")
+        e = "*"
+        while (d<a  ):
+            print(e)
+            e = e + '*'
+            d=d+1
+            if (d>a):
+                print("            ")
+                break
+            else:
+                continue
+    elif(b=='F'):
+        print("Your star pattern is here.")
+        y=str('*'*a)
+        z=a
+        while (d<a):
+            print(y[0:z])
+            d= d+ 1
+            z=z-1
+            if (d > a):
+                print("   ")
+                break
+            else:
+                continue
+    else:
+        print("INVALID INPUT..PLEASE TRY AGAIN..")
+        print("   ")
+    restart=str.lower(input("If you want to restart program then type 'y' else type anything.\n"))
+    if restart=="y":
+        print (">>>>>>>>>>>>>>PROGRAM RESTARTED<<<<<<<<<<<<<<<")
+        print("   ")
+        continue
+    else:
+        break
+
+
+
+
+
+
+
+
+
