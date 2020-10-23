@@ -1,0 +1,78 @@
+print("                         Created by Mr.Kiran Paudel.\n")
+print(">>>>>>>>>>>>>>>>>>>>>THIS IS ROCK,SCISSOR AND PAPER GAME.<<<<<<<<<<<<<<<<<<<<<")
+print("RULES OF GAME::-\n"
+      "1)You will lose one chance for each invalid input.\n "
+      "2)This game only last for 6 rounds.\n"
+      "3)The final decision of winner will be made at 6th round.\n")
+
+i=1
+a=0
+p=0
+
+
+while (i<7):
+        import random
+        import time
+
+        choise = ["rock", "scissor", "paper"]
+        ab = random.choice(choise)
+
+        inp=str.lower(input("Type 'r' for entering rock.\nType 's' for entering scissor.\n"
+                                "Type 'p' for entering paper.\n"))
+                               
+   #condition for rock
+   
+        if ab=="rock" and inp=="s":
+            print(f"Computer wins.    round={i} , No.of computer wins={a+1} , No. of your win={p}\n")
+            a=a+1
+            i=i+1
+        elif ab=="rock" and inp=="p":
+            print(f"You win.    round={i} , No.of computer wins={a} , No. of your win={p+1}\n")
+            i=i+1
+            p=p+1
+        elif ab=="rock" and inp=="r":
+            print(f"Game tied.    round={i} , No.of computer wins={a} , No. of your win={p}\n")
+            i=i+1
+
+# condition for scissor
+
+        elif ab=="scissor" and inp=="r":
+            print(f"You win.    round={i} , No.of computer wins={a} , No. of your win={p+1}\n")
+            i=i+1
+            p=p+1
+        elif ab=="scissor" and inp=="p":
+            print(f"Computer wins.    round={i} , No.of computer wins={a+1} , No. of your win={p}\n")
+            i=i+1
+            a=a+1
+        elif ab=="scissor" and inp=="s":
+            print(f"Game tied.    round={i} , No.of computer wins={a} , No. of your win={p}\n")
+            i=i+1
+
+# condition for paper
+
+        elif ab=="paper" and inp=="r":
+            print(f"Computer wins.    round={i} , No.of computer wins={a+1} , No. of your win={p}\n")
+            i=i+1
+            a=a+1
+        elif ab=="paper" and inp=="s":
+            print(f"You win.    round={i} , No.of computer wins={a} , No. of your win={p+1}\n")
+            i=i+1
+            p=p+1
+        elif ab=="paper" and inp=="p":
+            print(f"Game tied.    round={i} , No.of computer wins={a} , No. of your win={p}\n")
+            i=i+1
+        else:
+            print(f"INVALID INPUT! PLEASE TRY AGAIN.  round={i} , No.of computer wins={a} , No. of your win={p}\n")
+
+        if i==7:
+            time.sleep(2)
+            if a>p:
+                print(f"\n>>>>>  YOU LOSE.  <<<<<        No.of computer wins={a}  No. of your win={p}\n")
+
+            elif a<p:
+                print(f"\n>>>>>  YOU WON.  <<<<<         No.of computer wins={a} , No. of your win={p}\n")
+
+            else:
+                print(f"\n>>>>>  GAME TIED.  <<<<<         No.of computer wins={a} , No. of your win={p}\n")
+
+
