@@ -1,0 +1,135 @@
+#HEALTHY PROGRAMMER
+# 9 am - 5 pm
+# # water- water.mp3 (3.5 litres) -Drank -log(215 ml per 35 minutes) 18 times
+# # eyes- eyes.mp3 - eyedone(every 30 mins) 16 times
+# # physical activity -physical.mp3(every 45 mins)pedone)11 times
+# #
+# # py game module:
+# # use it
+import pygame
+import time
+print("                     HEALTHY PROGRAMMER                  ")
+
+print("                     Made by Mr.Kiran Paudel.     \nThis program will remind you by playing audio to drink"
+      "water,to do eyes and physical exercise\nas you need to be healthy to become a good progammer.\n ")
+name=str.capitalize(input("What is your name?\n"))
+print("\n>>>>>>>>>>>>>>>>>>>>>>> PROGRAM RAN SUCESSFULLY. <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+print("From now you will be reminded for drinking water, for doing eye exercise and for doing physical exercise. ")
+
+while True:
+    w_times = 1
+    ee_times = 1
+    pe_times = 1
+    def gettime():
+        import datetime
+        return str(datetime.datetime.now())
+#water alram
+    while w_times<18:
+        if w_times==1:
+            pygame.mixer.init()
+            water = "C:/Users/KRISHNA/Desktop/tunes/water.mp3"
+            pygame.mixer.music.load(water)
+            pygame.mixer.music.play(-1)
+            print("\nDrink 215 ml of water.")
+            user_input1 = str.lower(input("If you have drank water then input 'wdone' to stop this alarm.\n"))
+            if user_input1 == "wdone":
+                pygame.mixer.music.stop()
+                w_file = open("water.txt", "a")
+                w_file.write(gettime() + f"{ name} drank water.\n")
+                w_times == w_times + 1
+                break
+            else:
+                pygame.mixer.music.play(-1)
+                continue
+        else:
+            pygame.mixer.init()
+            water="C:/Users/KRISHNA/Desktop/tunes/water.mp3"
+            pygame.mixer.music.load(water)
+            pygame.mixer.music.play(-1)
+            print("\nDrink 215 ml of water.")
+            user_input1 =str.lower(input("If you have drank water then input 'wdone' to stop this alarm.\n"))
+            if user_input1 == "wdone":
+                pygame.mixer.music.stop()
+                w_file=open("water.txt","a")
+                w_file.write(gettime()+ f"{ name} drank water.\n")
+                w_times == w_times + 1
+                time.sleep(300)
+                break
+            else:
+                pygame.mixer.music.play()
+                continue
+    #eye exercise
+
+    while ee_times < 16:
+        if ee_times==1:
+            pygame.mixer.init()
+            eye_ex = "C:/Users/KRISHNA/Desktop/tunes/eyes.mp3"
+            pygame.mixer.music.load(eye_ex)
+            pygame.mixer.music.play(-1)
+            print("\nDo eye exercise.")
+            user_input2 = str.lower(input("If you have done eye exercise then type 'edone' to stop this alram.\n"))
+            if user_input2 == "edone":
+                pygame.mixer.music.stop()
+                eye_file = open("eye.txt", "a")
+                eye_file.write(gettime() + f"{ name} did eye exercise.\n")
+                ee_times == ee_times + 1
+                break
+            else:
+                pygame.mixer.music.play()
+                continue
+        else:
+            pygame.mixer.init()
+            eye_ex = "C:/Users/KRISHNA/Desktop/tunes/eyes.mp3"
+            pygame.mixer.music.load(eye_ex)
+            pygame.mixer.music.play(-1)
+            print("\nDo eye exercise.")
+            user_input2 = str.lower(input("If you have done eye exercise then type 'edone' to stop this alram.\n"))
+            if user_input2 == "edone":
+                pygame.mixer.music.stop()
+                eye_file = open("eye.txt", "a")
+                eye_file.write(gettime() + f"{ name} did eye exercise.\n")
+                ee_times == ee_times + 1
+                time.sleep(600)
+                break
+
+            else:
+                pygame.mixer.music.play()
+                continue
+        #physical exercise
+    while pe_times < 11:
+        if pe_times==1:
+            pygame.mixer.init()
+            phy_ex = "C:/Users/KRISHNA/Desktop/tunes/physical.mp3"
+            pygame.mixer.music.load(phy_ex)
+            pygame.mixer.music.play(-1)
+            print("\nDo physical exercise.")
+            user_input3 = str.lower(input("If you have done physical exercise then type 'pdone' to stop this alram.\n"))
+            if user_input3 == "pdone":
+                pygame.mixer.music.stop()
+                pex_file = open("physicalexe.txt", "a")
+                pex_file.write(gettime() + f"{name} did physical exercise.\n")
+                pe_times == pe_times + 1
+                time.sleep(900)
+                break
+            else:
+                pygame.mixer.music.play(-1)
+                continue
+
+        else:
+            pygame.mixer.init()
+            phy_ex = "C:/Users/KRISHNA/Desktop/tunes/physical.mp3"
+            pygame.mixer.music.load(phy_ex)
+            pygame.mixer.music.play(-1)
+            print("\nDo physical exercise.")
+            user_input3= str.lower(input("If you have done physical exercise then type 'pdone' to stop this alram.\n"))
+            if user_input3 == "pdone":
+                pygame.mixer.music.stop()
+                pex_file = open("physicalexe.txt", "a")
+                pex_file.write(gettime() + f"{ name} did physical exercise.\n")
+                pe_times == pe_times + 1
+                time.sleep(900)
+                break
+            else:
+                pygame.mixer.music.play()
+                continue
+    continue
