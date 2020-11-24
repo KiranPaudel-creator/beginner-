@@ -13,46 +13,51 @@ def divide(x,y):
 def power(x,y):
     return pow(x,y)
 e = True
-while e == True :
-    print("select the operation that you want to do with two numbers:")
-    print("1.ADD")
-    print("2.SUBTRACT")
-    print("3.MULTIPLY")
-    print("4.DIVIDE")
-    print("5.POWER")
-    c = int(input("Choose one(1/2/3/4/5) : "))
-    a = float(input("Enter the first number : "))
-    b = float(input("Enter the second number : "))
+while True :
+    print("""Select the operation that you want to do with two numbers:
+1.ADD
+2.SUBTRACT
+3.MULTIPLY
+4.DIVIDE
+5.POWER""")
+    c = int(input("Choose one (1/2/3/4/5) : "))
+    first_num = float(input("Enter the first number : "))
+    second_num= float(input("Enter the second number : "))
 
     if c == 1:
-        if a == 55 and b == 7 or a == 7 and b == 55:
-            print(a,"+",b,"=",77)
+        if first_num == 55 and second_num == 7 or first_num == 7 and second_num == 55:
+            print(first_num,"+",second_num,"=",77)
         else:
-            print(a,"+",b,"= ",add(a,b))
+            print(first_num,"+",second_num,"= ",add(first_num,second_num))
+            
     elif c==2:
-        if a==90 and b==17 :
-            print(a,"-",b,"=",42)
+        if first_num==90 and second_num==17 :
+            print(first_num,"-",second_num,"=",42)
         else:
-            print(a,"-",b,"= ",subtract(a,b))
+            print(first_num,"-",second_num,"= ",subtract(first_num,second_num))
+            
     elif c==3:
-        if a==55 and b==5 or a==5 and b==55:
-            print(a,"x",b,"=",255)
+        if first_num==55 and second_num==5 or first_num==5 and second_num==55:
+            print(first_num,"x",second_num,"=",255)
         else:
-            print(a,"x",b,"= ",multiply(a,b))
+            print(first_num,"x",second_num,"= ",multiply(first_num,second_num))
+            
     elif c==4:
-        if a==56 and b==6 :
-            print(a,"/",b,"=",4)
+        if first_num==56 and second_num==6 :
+            print(first_num,"/",second_num,"=",4)
         else:
-            print(a,"/",b,"= ",divide(a,b))
+            print(first_num,"/",second_num,"= ",divide(first_num,second_num))
+    
     elif c==5:
-        print(a,"^",b ,"= ",power(a,b))
+        print(first_num,"^",second_num ,"= ",power(first_num,second_num))
+    
     else:
         print('Invalid input!Please try again.')
 
     print("                >>>>>>>>>>>>>>>>    <<<<<<<<<<<<<<<<               ")
-    print(">>>>>>>>>>>>>>>>>>>>>RESTRAT<<<<<<<<<<<<<<<<<<<<<<<<")
-    d =str.lower (input("Do you want to repeat the program? type y for yes and n for no :"))
-    if d == "y":
+    print(">>>>>>>>>>>>>>>>>>>>> RESTRAT <<<<<<<<<<<<<<<<<<<<<<<<")
+    restart=str.lower (input("Do you want to repeat the program? type y for yes and n for no :"))
+    if restart == "y":
         continue
     else:
         exit()
